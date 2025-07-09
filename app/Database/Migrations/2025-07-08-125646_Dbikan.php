@@ -19,6 +19,10 @@ class Dbikan extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
+            'nama_latin' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+            ],
             'habitat' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '20',

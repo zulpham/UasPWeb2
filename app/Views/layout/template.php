@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template Magical Forest Tavern - Tema Hutan Rimbun</title>
+    <title>IkanKU - Pencari Ikan Handal</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
         }
 
         body {
-            background-image: url('img/bg.png');
+            background-image: url('/img/bg.png');
             background-color: var(--warna-latar);
             font-family: var(--font-teks);
             color: var(--warna-teks-konten);
@@ -150,23 +150,23 @@
 
     <nav class="navbar navbar-expand-lg navbar-tavern">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">The Sunlit Perch</a>
+            <a class="navbar-brand" style="margin-left: 1rem;" href="/">I k a n K U</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                        <a class="nav-link" aria-current="page" href="/">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Bestiary</a>
+                        <a class="nav-link" href="/tentang">Tentang Kami</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Perayaan</a>
+                        <a class="nav-link" href="/acara">Event</a>
                     </li>
                     <li class.nav-item">
-                        <a class="nav-link" href="#">Hubungi Kami</a>
+                        <a class="nav-link" href="/kontak">Hubungi Kami</a>
                     </li>
                 </ul>
             </div>

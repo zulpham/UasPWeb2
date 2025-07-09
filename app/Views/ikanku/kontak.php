@@ -1,4 +1,4 @@
 <?= $this->extend('layout/template');?>
-<h1>kontak</h1>
 <?= $this->section('content');?>
+<h1>kontak</h1>
 <?= $this->endSection();?>
