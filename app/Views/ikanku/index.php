@@ -20,6 +20,11 @@
         margin-left: auto;
     }
 </style>
+<?php if (session()->getFlashdata('pesan')) :?>
+    <div class="alert alert-success" role="alert">
+        <?= session()->getFlashdata('pesan');?>
+    </div>
+<?php endif; ?>
 <div class="container">
     <div class="row">
         <h1>Daftar Ikan</h1>
@@ -43,4 +48,5 @@
         </div>
     </div>
 </div>
+<a href="/ikanku/tambah" class="btn btn-primary mt-2">Tambah Data Ikan</a>
 <?= $this->endSection();?>

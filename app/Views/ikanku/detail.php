@@ -20,10 +20,14 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card-body">
-                        <a href="" class="btn btn-warning w-50">Ubah</a>
+                        <a href="/ikanku/edit/<?= $ikan['nama_ikan']; ?>" class="btn btn-warning w-50">Ubah</a>
                         <br>
                         <br>
-                        <a href="" class="btn btn-danger w-50">Hapus</a>
+                        <form action="/ikanku/del/<?= $ikan['id_ikan']; ?>" method="post" class="d-inline">
+                            <?= csrf_field();?>
+                            <input type="hidden" name="_method" value="delete">
+                            <button type="submit" class="btn btn-danger w-50" onclick="return confirm('apakah anda yakin ingin menghapusnya?')">Hapus</button>
+                        </form>
                     </div>
                 </div>
             </div>
