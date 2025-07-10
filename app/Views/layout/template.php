@@ -198,5 +198,21 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function previewImg() {
+                const gambar = document.querySelector('#gambar');
+                const gambarLabel = document.querySelector('.input-group-text');
+                const imgPreview = document.querySelector('.img-preview');
+
+                gambarLabel.textContent = gambar.files[0].name;
+
+                const fileGambar = new FileReader();
+                fileGambar.readAsDataURL(gambar.files[0]);
+
+                fileGambar.onload = function(e) {
+                    imgPreview.src = e.target.result;
+                }
+            }
+    </script>
 </body>
 </html>

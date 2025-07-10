@@ -41,19 +41,31 @@ class Ikanku extends BaseController{
     public function save()
     {
         $nama_ikan = url_title($this->request->getVar('nama_ikan'), '-', true);
+        $gambarIkan = $this->request->getFile('gambar_ikan');
+        if ($gambarIkan->getError() == 4)
+        {
+            $namaGambar = "gambar_default.jpg";
+        } else {
+            $namaGambar = "gambar_" . $nama_ikan . ".jpg";
+            $gambarIkan->move('img',$namaGambar);
+        }
         $this->ikanModel->save([
             'nama_ikan' => $this->request->getVar('nama_ikan'),
             'nama_latin' => $this->request->getVar('nama_latin'),
             'habitat' => $this->request->getVar('habitat'),
             'diet' => $this->request->getVar('diet'),
             'asal' => $this->request->getVar('asal'),
-            'gambar_ikan' => $this->request->getVar('gambar_ikan')
+            'gambar_ikan' => $namaGambar
         ]);
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
         return redirect()->to('/');
     }
     public function delete($id_ikan)
     {
+        $ikan = $this->ikanModel->find($id_ikan);
+        if($ikan['gambar_ikan'] != 'gambar_default.jpg'){
+            unlink('img/'. $ikan['gambar_ikan']);
+        }
         $this->ikanModel->delete($id_ikan);
         session()->setFlashdata('pesan', 'Data berhasil dihapus.');
         return redirect()->to('/');
@@ -75,6 +87,17 @@ class Ikanku extends BaseController{
             $rule_nama_ikan ='required|is_unique[ikan.nama_ikan]';
         }
     $nama_ikan = url_title($this->request->getVar('nama_ikan'), '-', true);
+    $gambarIkan = $this->request->getFile('gambar_ikan');
+    if ($gambarIkan->getError() == 4)
+    {
+        $namaGambar = $this->request->getVar('gambar_ikanLama');
+    } else {
+        $namaGambar = "gambar_". $nama_ikan. ".jpg";
+        if($this->request->getVar('gambar_ikanLama') != 'gambar_default.jpg'){
+            unlink('img/'. $this->request->getVar('gambar_ikanLama'));
+            }
+        $gambarIkan->move('img',$namaGambar);
+    }
     $this->ikanModel->save([
         'id_ikan' => $id_ikan,
         'nama_ikan' => $this->request->getVar('nama_ikan'),
@@ -82,6 +105,7 @@ class Ikanku extends BaseController{
         'habitat' => $this->request->getVar('habitat'),
         'diet' => $this->request->getVar('diet'),
         'asal' => $this->request->getVar('asal'),
+        'gambar_ikan' => $namaGambar
     ]);
     session()->setFlashdata('pesan', 'Data berhasil diubah.');
     return redirect()->to('/');

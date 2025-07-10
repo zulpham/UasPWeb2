@@ -6,13 +6,13 @@
             <div class="card mb-3">
                 <div class="row g-0" style="align-items: center;">
                     <div class="col-md-4">
-                        <img src="<?= $ikan['gambar_ikan'];?>" class="img-fluid rounded-start" alt="...">
+                        <img src="/img/<?= $ikan['gambar_ikan'];?>" class="img-fluid rounded-start" alt="...">
                     </div>
                 <div class="col-md-4">
                     <div class="card-body" style="text-align: left;font-size:1.2rem">
                         <h3 class="card-title"><strong><?= $ikan['nama_ikan'];?></strong></h3>
-                        <p class="card-text"><?= $ikan['nama_latin'];?></p>
-                        <p class="card-text"><small class="text-body-secondary"><b>habitat : </b><?= $ikan['habitat']; ?></small></p>
+                        <p class="card-text"><i><?= $ikan['nama_latin'];?></i></p>
+                        <p class="card-text"><small class="text-body-secondary"><b>Habitat : </b><?= $ikan['habitat']; ?></small></p>
                         <p class="card-text"><small class="text-body-secondary"><b>Diet    : </b><?= $ikan['diet']; ?></small></p>
                         <p class="card-text"><small class="text-body-secondary"><b>Asal    : </b><?= $ikan['asal']; ?></small></p>
                         <br>

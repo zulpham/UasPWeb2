@@ -38,8 +38,11 @@
                 </div>
                 <div class="row mb-3">
                     <label for="gambar_ikan" class="col-sm-2 col-form-label">Gambar Ikan</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="gambar_ikan" name="gambar_ikan">
+                    <div class="col-sm-5">
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="gambar_ikan" name="gambar_ikan" onchange="previewImg()">
+                        <label  class="input-group-text" for="gambar_ikan">Upload</label>
+                    </div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Tambah Data</button>

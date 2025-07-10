@@ -31,7 +31,7 @@
         <div class="col">
         <?php for ($i = 0; $i < count($ikan); $i += 2) : ?>
             <div class="d-flex align-items-center mb-3">
-                <img src="<?= $ikan[$i]['gambar_ikan'];?>" alt="" class="gambar_ikan me-3">
+                <img src="/img/<?= $ikan[$i]['gambar_ikan'];?>" alt="" class="gambar_ikan me-3">
                 <h4><?= $ikan[$i]['nama_ikan']; ?></h4>
                 <a href="/detail/<?= $ikan[$i]['nama_ikan']; ?>" class="btn btn-success" style="justify-content: flex-end;">Detail</a>
             </div>
@@ -40,7 +40,7 @@
         <div class="col">
         <?php for ($i = 1; $i < count($ikan); $i += 2) : ?>
             <div class="d-flex align-items-center mb-3">
-                <img src="<?= $ikan[$i]['gambar_ikan'];?>" alt="" class="gambar_ikan me-3">
+                <img src="/img/<?= $ikan[$i]['gambar_ikan'];?>" alt="" class="gambar_ikan me-3">
                 <h4><?= $ikan[$i]['nama_ikan']; ?></h4>
                 <a href="/detail/<?= $ikan[$i]['nama_ikan']; ?>" class="btn btn-success" style="justify-content: flex-end;">Detail</a>
             </div>
