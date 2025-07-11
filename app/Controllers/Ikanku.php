@@ -17,9 +17,6 @@ class Ikanku extends BaseController{
     public function tentangkami(): string{
         return view('ikanku/tentangkami');
     }
-    public function acara(): string{
-        return view('ikanku/acara');
-    }
     public function kontak(): string{
         return view('ikanku/kontak');
     }
@@ -29,14 +26,14 @@ class Ikanku extends BaseController{
             'title' => 'Detail Ikan',
             'ikan' => $this->ikanModel->getIkan($nama_ikan)
         ];
-        return view('ikanku/detail', $data);
+        return view('ikanku/detail_ikan', $data);
     }
     public function create()
     {
         $data = [
             'title' => 'Form Tambah Data Ikan',
         ];
-        return view('ikanku/create', $data);
+        return view('ikanku/create_ikan', $data);
     }
     public function save()
     {
@@ -76,7 +73,7 @@ class Ikanku extends BaseController{
             'title' => 'Form Ubah Data Ikan',
             'ikan' => $this->ikanModel->getIkan($nama_ikan)
         ];
-        return view('ikanku/edit', $data);
+        return view('ikanku/edit_ikan', $data);
     }
     public function update($id_ikan)
     {

@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col">
             <h1 class="my-3">Detail Ikan</h1>
-            <div class="card mb-3">
+            <div class="card mb-3" style="padding: 20px;">
                 <div class="row g-0" style="align-items: center;">
                     <div class="col-md-4">
                         <img src="/img/<?= $ikan['gambar_ikan'];?>" class="img-fluid rounded-start" alt="...">
